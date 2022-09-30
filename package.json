@@ -1,0 +1,17 @@
+{
+  "name": "vue-global-image-error",
+  "version": "1.0.0",
+  "description": "set a default fallback image src for image errors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "image",
+    "errors",
+    "plugin"
+  ],
+  "author": "mvcuccaro",
+  "license": "ISC"
+}
