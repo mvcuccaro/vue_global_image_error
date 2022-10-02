@@ -1,5 +1,5 @@
 {
-  "name": "vue-global-image-error",
+  "name": "@conditionrace/vue-global-image-error",
   "version": "1.0.0",
   "description": "set a default fallback image src for image errors",
   "main": "index.js",
@@ -13,5 +13,13 @@
     "plugin"
   ],
   "author": "mvcuccaro",
-  "license": "ISC"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvcuccaro/vue_global_image_error.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mvcuccaro/vue_global_image_error/issues"
+  },
+  "homepage": "https://github.com/mvcuccaro/vue_global_image_error#readme"
 }
