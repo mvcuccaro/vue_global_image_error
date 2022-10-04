@@ -1,4 +1,5 @@
 const NGE = 'noglobalerror'
+const DEFAULT_IMAGE_PATH = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTQgOWwtMi41MTkgNC0yLjQ4MS0xLjk2LTUgNi45NmgxNmwtNi05em04LTV2MTZoLTIwdi0xNmgyMHptMi0yaC0yNHYyMGgyNHYtMjB6bS0yMCA2YzAtMS4xMDQuODk2LTIgMi0yczIgLjg5NiAyIDJjMCAxLjEwNS0uODk2IDItMiAycy0yLS44OTUtMi0yeiIvPjwvc3ZnPg=="
 
 let imageErrors = ($el, image_path) => {
   //get all images
@@ -6,7 +7,12 @@ let imageErrors = ($el, image_path) => {
 
   //replacement function
   let errorFunc = (i) => {
-    i.target.src = image_path;
+    let replace = i.target.dataset['errorFallback'] || image_path;
+    if(replace == i.target.src){
+      return false
+    }
+
+    i.target.src = replace;
     i.target.style['object-fit'] = 'scale-down';
   }
 
@@ -25,10 +31,10 @@ export default {
   install(Vue, options){
     Vue.mixin({
       updated(){
-        imageErrors(this.$el, options.image_path)
+        imageErrors(this.$el, options.image_path || DEFAULT_IMAGE_PATH)
       },
       mounted(){
-        imageErrors(this.$el, options.image_path)
+        imageErrors(this.$el, options.image_path || DEFAULT_IMAGE_PATH)
       }
     })
   }

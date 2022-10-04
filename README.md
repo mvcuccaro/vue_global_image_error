@@ -12,4 +12,9 @@ Vue.use(globalImageError, {
 ```
 
 ## options
-### image_path: url/path to replacemant image
+### image_path: url/path to replacement image
+If no image_path option is provided the default image will be used.
+
+![image_path](./default_sample.svg)
+
+
